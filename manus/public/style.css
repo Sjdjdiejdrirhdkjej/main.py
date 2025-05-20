@@ -1,0 +1,89 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-ui {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.browser-view {
+    width: 70%;
+    padding: 20px;
+    background-color: #e9e9e9;
+    display: flex; /* For centering image if needed */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
+    box-sizing: border-box; /* Include padding in width */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+h2 {
+    color: #333;
+    margin-top: 0; /* Remove default margin for h2 */
+}
+
+#actionInfo {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    flex-grow: 1; /* Allow this element to take available space */
+    margin-bottom: 15px; /* Space before input area */
+}
+
+.input-area {
+    display: flex; /* Align input and button in a row */
+    margin-top: auto; /* Push to the bottom */
+}
+
+#commandInput {
+    flex-grow: 1; /* Input takes available space */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#sendCommandButton {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+#sendCommandButton:hover {
+    background-color: #4cae4c;
+}
+
+#screenshotImage {
+    max-width: 100%;
+    max-height: calc(100vh - 80px); /* Example: viewport height minus padding and h2 */
+    height: auto;
+    border: 1px solid #ccc;
+    background-color: #fff; /* In case of transparent images */
+    display: block; /* Remove extra space below image */
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manus - Browser Agent Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-ui">
+            <h2>Agent Interaction</h2>
+            <pre id="actionInfo">No action performed yet.</pre>
+            <div class="input-area">
+                <input type="text" id="commandInput" placeholder="Enter command (e.g., go_to https://google.com)">
+                <button id="sendCommandButton">Send</button>
+            </div>
+        </div>
+        <div class="browser-view">
+            <h2>Browser View</h2>
+            <img id="screenshotImage" src="#" alt="Current browser screenshot">
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
