@@ -1,0 +1,38 @@
+/* Reset default browser styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}
+
+.chat-panel {
+  width: 30%; /* ChatUI takes 30% of the width */
+  min-width: 300px; /* Minimum width for the chat panel */
+  max-width: 500px; /* Maximum width for the chat panel */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Scroll if content overflows */
+  border-right: 1px solid #d1d1d1; /* Separator line */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.browser-panel {
+  flex-grow: 1; /* BrowserView takes the remaining space */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Browser view might handle its own scrolling later */
+}
+
+/* Ensure components inside panels also take full height if needed by their own CSS */
+.chat-panel > div, .browser-panel > div {
+  height: 100%;
+}

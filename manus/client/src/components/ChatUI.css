@@ -1,0 +1,195 @@
+.chat-ui-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+}
+
+.message-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between messages */
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 85%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column; /* Stack content, reasoning, timestamp vertically */
+  position: relative; /* For absolute positioning of sender label if needed */
+}
+
+.message .sender-label {
+  font-weight: bold;
+  margin-bottom: 4px; /* Increased space */
+  font-size: 0.8em; /* Smaller label */
+  color: #555; /* Darker grey for label */
+  text-transform: uppercase; /* Uppercase label */
+}
+
+.message .content {
+  font-size: 1em;
+  line-height: 1.4;
+  white-space: pre-wrap; /* Preserve whitespace and newlines in content */
+}
+
+.message .timestamp {
+  font-size: 0.7em; /* Smaller timestamp */
+  color: #999; /* Lighter grey for timestamp */
+  margin-top: 5px;
+  align-self: flex-end;
+}
+
+/* User messages */
+.message.user.message { /* type 'message' for user */
+  background-color: #d1eaff; /* Light blue for user */
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+.message.user.message .sender-label {
+  color: #0056b3;
+}
+
+/* Agent messages */
+.message.agent {
+  background-color: #e2ffe2; /* Default light green for agent */
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+.message.agent .sender-label {
+  color: #006400; /* Dark green for agent labels */
+}
+
+/* Agent reasoning messages */
+.message.agent.reasoning {
+  background-color: #f0fff0; /* Very light mint green for reasoning */
+  border-left: 3px solid #5cb85c; /* Green left border for emphasis */
+}
+.message.agent.reasoning .content {
+  font-style: italic;
+  color: #3c763d; /* Darker green text for reasoning */
+}
+
+/* Agent action messages */
+.message.agent.action {
+  background-color: #d9edf7; /* Light blue, similar to info alerts */
+  border-left: 3px solid #31708f; /* Blue left border */
+}
+.message.agent.action .content {
+  font-family: 'Courier New', Courier, monospace; /* Monospace for actions */
+  color: #31708f; /* Darker blue text for actions */
+  font-weight: bold;
+}
+
+/* System messages */
+.message.system {
+  align-self: center;
+  max-width: 90%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 0.85em; /* Slightly smaller for system messages */
+}
+.message.system .sender-label {
+ /* Keep sender label for system messages to show type, e.g. System (Error) */
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 0.8em;
+  color: #555;
+  text-transform: uppercase;
+}
+
+
+.message.system.status {
+  background-color: #f0f0f0; /* Light grey for general status */
+  color: #444;
+}
+.message.system.status .content {
+  font-style: italic;
+}
+.message.system.status .sender-label {
+  color: #333;
+}
+
+
+.message.system.error {
+  background-color: #f2dede; /* Light red for errors */
+  color: #a94442; /* Dark red text for errors */
+  border: 1px solid #ebccd1;
+}
+.message.system.error .content {
+  font-weight: bold;
+}
+.message.system.error .sender-label {
+  color: #a94442;
+}
+
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px; /* More rounded input */
+  margin-right: 10px;
+  font-size: 1em;
+}
+.input-area input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.input-area button {
+  padding: 10px 15px; /* Adjusted padding for spinner */
+  min-width: 80px; /* Ensure button has minimum width for spinner */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px; /* More rounded button */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+.input-area button:disabled {
+  background-color: #007bffc9; /* Slightly faded when disabled */
+  cursor: not-allowed;
+}
+
+.button-spinner {
+  width: 18px; /* Spinner size */
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
