@@ -14,7 +14,7 @@ let agent: Agent | null = null;
 
 // Basic Express route
 app.get('/', (req, res) => {
-  res.send('Manus backend is running');
+  res.send('React TS Puppeteer Backend is running');
 });
 
 // Create HTTP server
@@ -74,7 +74,7 @@ const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
-  ws.send(JSON.stringify({ type: 'status', message: 'Connected to Manus backend. Browser and Agent are ready.' }));
+  ws.send(JSON.stringify({ type: 'status', message: 'Connected to Puppeteer backend. Browser and Agent are ready.' }));
 
   // Send initial blank screenshot or wait for go_to
   // For now, we wait for the first go_to to send a meaningful screenshot.
@@ -231,7 +231,7 @@ wss.on('connection', (ws) => {
 
 // Start the server and Puppeteer
 server.listen(port, async () => {
-  console.log(`Manus backend server listening on port ${port}`);
+  console.log(`Puppeteer backend server listening on port ${port}`);
   await startBrowser(); // Initial browser start without specific client
 });
 

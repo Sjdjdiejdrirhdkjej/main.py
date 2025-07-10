@@ -1,7 +1,9 @@
 {
-  "name": "client",
+  "name": "react-ts-puppeteer-client",
   "version": "0.1.0",
   "private": true,
+  "description": "React/TypeScript client for interacting with a Puppeteer backend, part of a template.",
+  "author": "Your Name or Org Here",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

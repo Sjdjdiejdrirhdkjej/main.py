@@ -1,13 +1,15 @@
 {
-  "name": "server",
+  "name": "react-ts-puppeteer-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node.js/TypeScript server with Puppeteer for browser automation, part of a template.",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["puppeteer", "typescript", "nodejs", "websocket", "template"],
+  "author": "Your Name or Org Here",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^5.0.2",

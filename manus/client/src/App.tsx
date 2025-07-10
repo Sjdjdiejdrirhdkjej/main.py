@@ -27,6 +27,7 @@ function App() {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [isExecuting, setIsExecuting] = useState<boolean>(false); // For loading indicator
 
+  // TODO: Consider making the WebSocket URL configurable (e.g., via environment variable)
   const { lastMessage, sendMessage, connectionStatus } = useWebSocket('ws://localhost:3001');
 
   const addChatMessage = useCallback((
