@@ -14,6 +14,9 @@ body, html {
     display: flex;
     width: 100%;
     height: 100%;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    margin: 15px; /* Margin around the container */
 }
 
 .chat-ui {
@@ -91,4 +94,5 @@ h2 {
     background-color: #fff; /* In case of transparent images */
     display: block; /* Remove extra space below image */
 }
+
 
