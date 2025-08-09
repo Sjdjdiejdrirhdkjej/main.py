@@ -1,9 +1,13 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -87,3 +91,4 @@ h2 {
     background-color: #fff; /* In case of transparent images */
     display: block; /* Remove extra space below image */
 }
+
